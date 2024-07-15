@@ -1,0 +1,61 @@
+@media (min-width: 375px) {
+	.main-block {
+		background-size: cover;
+		padding: 20px 10px;
+	}
+	
+	.main-block-upper-text {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	
+	.main-block-title {
+		font-size: 24px;
+		margin: 50px 10px;
+	}
+	
+	.main-block-btn {
+		margin-top: 70px;
+	}
+	
+	.benefit-block {
+		position: absolute;
+		bottom: -150px;
+		padding: 30px 10px;
+	}
+	
+	.result-block {
+		margin-top: 50px;
+		top: 65px;
+		padding: 20px 10px;
+	}
+	
+	.result-block-text {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	
+	.benefit-block .quote-top {
+		background-image: url('images/quotes-top.png');
+		top: 20px;
+		left: 20px;
+	}
+	
+	.result-btn {
+		margin: 0;
+	}
+	
+	.benefit-block .quote-bottom {
+		background-image: url('images/quotes-bottom.png');
+		bottom: 50px;
+		right: 16px;
+	}
+	
+	.zipper-block {
+		top: 70px
+	}
+	
+	.zipper-text-block p {
+		width: 85%;
+	}
+}
