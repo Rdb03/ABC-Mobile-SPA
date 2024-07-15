@@ -1,9 +1,10 @@
 function navToggle() {
 	const navBtn = document.getElementById('navBtn');
 	const mainNav = document.getElementById('mainNav');
+	const navLinks = document.querySelectorAll('.nav-link');
 	const point = 980;
 	
-	navBtn.onclick = function () {
+	function toggleMenu() {
 		let heightNav = mainNav.scrollHeight;
 		
 		if (mainNav.classList.contains('nav-hidden')) {
@@ -22,6 +23,16 @@ function navToggle() {
 			}, 10);
 		}
 	}
+	
+	navBtn.onclick = toggleMenu;
+	
+	navLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			if (window.innerWidth < point) {
+				toggleMenu();
+			}
+		});
+	});
 	
 	window.addEventListener("resize", resizeHandler, false);
 	
