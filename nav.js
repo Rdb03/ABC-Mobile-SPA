@@ -12,14 +12,14 @@ function navToggle() {
 			setTimeout(() => {
 				mainNav.style.height = 'auto';
 				mainNav.classList.add('nav-visible');
-			}, 300); // Время совпадает с transition
+			}, 300);
 		} else {
 			mainNav.classList.remove('nav-visible');
-			mainNav.style.height = heightNav + 'px'; // Устанавливаем высоту для начала перехода
+			mainNav.style.height = heightNav + 'px';
 			setTimeout(() => {
 				mainNav.style.height = '0';
 				mainNav.classList.add('nav-hidden');
-			}, 10); // Небольшая задержка для начала перехода
+			}, 10);
 		}
 	}
 	
