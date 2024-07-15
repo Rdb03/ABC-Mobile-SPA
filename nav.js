@@ -1,56 +1,42 @@
 function navToggle() {
-	
 	const navBtn = document.getElementById('navBtn');
 	const mainNav = document.getElementById('mainNav');
 	const point = 980;
 	
 	navBtn.onclick = function () {
-		
-		let heightNav = mainNav.firstElementChild.offsetHeight;
+		let heightNav = mainNav.scrollHeight;
 		
 		if (mainNav.classList.contains('nav-hidden')) {
-			
 			mainNav.classList.remove('nav-hidden');
-			
 			mainNav.style.height = heightNav + 'px';
-			
+			setTimeout(() => {
+				mainNav.style.height = 'auto';
+				mainNav.classList.add('nav-visible');
+			}, 300); // Время совпадает с transition
 		} else {
-			
-			mainNav.classList.add('nav-hidden');
-			
-			mainNav.style.height = 0;
-			
+			mainNav.classList.remove('nav-visible');
+			mainNav.style.height = heightNav + 'px'; // Устанавливаем высоту для начала перехода
+			setTimeout(() => {
+				mainNav.style.height = '0';
+				mainNav.classList.add('nav-hidden');
+			}, 10); // Небольшая задержка для начала перехода
 		}
-		
 	}
-	
 	
 	window.addEventListener("resize", resizeHandler, false);
 	
 	function resizeHandler() {
-		
-		let heightNav = mainNav.firstElementChild.offsetHeight;
-		
 		if (window.innerWidth >= point) {
-			
 			mainNav.style.height = 'auto';
-			
 		} else {
-			
 			if (mainNav.classList.contains('nav-hidden')) {
-				
 				mainNav.style.height = 0;
-				
 			} else {
-				
+				let heightNav = mainNav.scrollHeight;
 				mainNav.style.height = heightNav + 'px';
-				
 			}
-			
 		}
-		
 	}
-	
 }
 
-navToggle();
+document.addEventListener('DOMContentLoaded', navToggle);
